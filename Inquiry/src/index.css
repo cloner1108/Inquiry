@@ -1,26 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: IRANSans;
 
-  src: url("./assets/fonts/IRANSansWeb.woff");
-}
 @font-face {
-  font-family: IRANSans_Bold;
-  src: url("./assets/fonts/IRANSansWeb_Bold.woff");
-}
-@font-face {
-  font-family: IRANSans_Light;
-  src: url("./assets/fonts/IRANSansWeb_Light.woff");
-}
-@font-face {
-  font-family: IRANSans_Medium;
-  src: url("./assets/fonts/IRANSansWeb_Medium.woff");
-}
-@font-face {
-  font-family: IRANSans_UltraLight;
-  src: url("./assets/fonts/IRANSansWeb_UltraLight.woff");
+  font-family: IranSans;
+  src: url("../src/assets/fonts/IRANSansWeb\(FaNum\)_Medium.woff");
 }
 
 :root {
@@ -38,10 +22,20 @@
   -webkit-text-size-adjust: 100%;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 body {
+  min-width: 480px;
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
   /* min-height: 100vh; */
 }
