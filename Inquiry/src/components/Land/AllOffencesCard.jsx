@@ -1,5 +1,5 @@
 import React from "react";
-import add from "../../assets/img/add.jpg";
+import img from "../../assets/img/allOffences.jpg";
 import { Link } from "react-router-dom";
 
 const AllOffencesCard = () => {
@@ -10,7 +10,7 @@ const AllOffencesCard = () => {
           <h2>لیست تخلفات خودرو</h2>
           <div className="image h-full">
             <img
-              src={add}
+              src={img}
               alt="search"
               className="w-full aspect-square object-center"
             />
