@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import {
   Table,
   TableHeader,
@@ -6,17 +6,17 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  getKeyValue,
   Pagination,
+  getKeyValue,
 } from "@nextui-org/react";
 
 const NextUITable = ({ rows, columns, isStriped }) => {
-  const [page, setPage] = React.useState(1);
-  const rowsPerPage = 8;
+  const [page, setPage] = useState(1);
+  const rowsPerPage = 4;
 
   const pages = Math.ceil(rows.length / rowsPerPage);
 
-  const items = React.useMemo(() => {
+  const items = useMemo(() => {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
 
@@ -31,7 +31,7 @@ const NextUITable = ({ rows, columns, isStriped }) => {
         <div
           className={
             (items.length >= rows.length ? "hidden" : "") +
-            " flex w-full justify-center"
+            " flex w-full justify-center "
           }
           dir="ltr"
         >
@@ -52,8 +52,9 @@ const NextUITable = ({ rows, columns, isStriped }) => {
           <TableColumn
             className="bg-slate-500 shadow-xl text-black text-right first:rounded-l-none first:rounded-r-lg last:rounded-l-lg last:rounded-r-none"
             key={column.key}
+            dir="ltr"
           >
-            {column.label}
+            <div dir="rtl">{column.label}</div>
           </TableColumn>
         )}
       </TableHeader>
@@ -61,9 +62,7 @@ const NextUITable = ({ rows, columns, isStriped }) => {
         {(item) => (
           <TableRow key={item.key}>
             {(columnKey) => (
-              <TableCell className=" text-right first:before:rounded-l-none first:before:rounded-r-lg last:before:rounded-l-lg last:before:rounded-r-none">
-                {getKeyValue(item, columnKey)}
-              </TableCell>
+              <TableCell>{getKeyValue(item, columnKey)}</TableCell>
             )}
           </TableRow>
         )}

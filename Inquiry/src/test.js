@@ -1,20 +1,53 @@
-[
-    {
-        "owner": {
-            "name": "علی عبدی",
-            "IDNumber": "2170343083"
-        },
-        "car": { "model": "سمند", "year": "1391", "pelak": "۶۸د۵۱۱۶۲", "color": "سفید" },
-        "offences": [{ "kind": "تسلیمی", "seryalNumber": "1265212", "location": "ساری", "title": "توقف دوبله در معابر", "officer": "", "time": "", "price": "60000" }, { "kind": "الصاقی", "seryalNumber": "3269371", "location": "مشهد", "title": "تجاوز به چپ از محور راه", "officer": "", "time": "", "price": "75000" }],
-        "key": "1"
-    },
-    {
-        "owner": {
-            "name": "محمد یعقوبی",
-            "IDNumber": "2171343083"
-        },
-        "car": { "model": "تیبا", "year": "1400", "pelak": "۶۸۶۱۱۶۲", "color": "مشکی" },
-        "offences": [],
-        "key": "2"
-    }
-]
+<Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                Modal Title
+              </ModalHeader>
+              <ModalBody>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam pulvinar risus non risus hendrerit venenatis.
+                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                </p>
+                {modalContent}
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Action
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal><Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                Modal Title
+              </ModalHeader>
+              <ModalBody>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam pulvinar risus non risus hendrerit venenatis.
+                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                </p>
+                {modalContent}
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Action
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
